@@ -211,6 +211,8 @@ Depth is structural, not atmospheric. Every raised surface has a sharp solid bla
 
 **The Touch Color Rule.** The nearest hero word takes a text-safe pastel color on hover or touch while the other four stay ink. Deeper light-mode inks and brighter dark-mode inks keep the large Arabic words legible against their paper grounds; the color eases over `160ms`, touch feedback persists briefly after release, and pointer leave clears it. The global reduced-motion override makes the color state immediate without removing it.
 
+**The Gemini Shortcut Rule.** The API-key dialog's action row leads with a compact 42px square tile: a paper surface inside the same sharp ink frame and hard shadow, holding the four-point Gemini sparkle in its blue→violet→coral gradient. It is a real link to Google AI Studio's key page that opens in a new tab with `noopener noreferrer`, carries an Arabic accessible name, and stays a light tile inside the always-light dialog in both themes. It only helps obtain a key; it never reads, writes, or transmits one.
+
 ## Shapes
 
 Work surfaces, fields, cards, and primary controls have square corners with `3px` black borders. Suggestions alone use fully rounded pill silhouettes. Palette samples are circles with `3px` borders. Focus uses a visible `3px` outline with a `4px` offset rather than changing component geometry.

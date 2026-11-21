@@ -221,6 +221,17 @@ class ApiKeyDialogTests(unittest.TestCase):
         self.assertRegex(self.html, r'<dialog[^>]*class="[^"]*\bno-print\b')
         self.assertRegex(self.html, r'<button[^>]*id="api-key-button"[^>]*class="[^"]*\bbrutal-button\b')
 
+    def test_dialog_has_gemini_key_link(self):
+        self.assertIn('id="gemini-key-link"', self.html)
+        self.assertIn('href="https://aistudio.google.com/u/2/api-keys"', self.html)
+        self.assertIn('target="_blank"', self.html)
+        self.assertIn('rel="noopener noreferrer"', self.html)
+        self.assertIn('aria-label="فتح صفحة مفاتيح Gemini"', self.html)
+        self.assertIn('class="gemini-mark"', self.html)
+        self.assertIn("<linearGradient", self.html)
+        self.assertIn(".gemini-key-link", self.css)
+        self.assertIn(".gemini-mark", self.css)
+
     def test_dialog_reuses_the_pinned_visual_system(self):
         for selector in (".header-actions", ".api-key-button", ".api-key-dialog", ".api-key-input", ".api-key-status", ".api-key-actions"):
             self.assertIn(selector, self.css, selector)

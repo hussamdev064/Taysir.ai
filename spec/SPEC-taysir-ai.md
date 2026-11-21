@@ -10,6 +10,9 @@ Success means a user can enter or select an idea, generate a valid identity, cop
 ## Approved Addition: Pasteable API Key
 The header includes a «مفتاح Gemini» button that opens a native Arabic dialog with a masked password field, save, clear, and close actions. A pasted key overrides `GEMINI_API_KEY` for the current page only; it is never written to `localStorage`, `sessionStorage`, or source files, and the password field is cleared whenever the dialog opens or closes. The original `YOUR_API_KEY_HERE` placeholder remains in `script.js` as the fallback. This addition was explicitly requested and approved by the user.
 
+## Approved Addition: Gemini Key Shortcut
+The API-key dialog's action row leads with a compact Gemini-marked link that opens `https://aistudio.google.com/u/2/api-keys` in a new tab with `noopener noreferrer`. It carries an Arabic accessible label, uses the pinned sharp-border/hard-shadow button language, and only helps the user obtain a key; it never reads, writes, or transmits one. This addition was explicitly requested and approved by the user; all original copy and states remain unchanged.
+
 ## Approved Addition: Coolors Link and Ideas Card
 The palette card carries a compact blue «Coolors» link that opens `https://coolors.co/<hex>-<hex>-<hex>` in a new tab with `noopener noreferrer`; the URL is rebuilt from the validated HEX values on every generation. Gemini's strict JSON response also includes `suggestions`: an array of 3–4 objects with non-empty Arabic `title` and `body` strings, rendered in a fourth pastel-blue card with its own copy action and print support. This addition was explicitly requested and approved by the user; all original copy and states remain unchanged.
 

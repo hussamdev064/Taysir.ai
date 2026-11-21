@@ -100,6 +100,8 @@ html.dark #project-description::placeholder { color: #d6c6df; }
 .api-key-actions .brutal-button { padding: 0.65rem 0.9rem; font-size: 0.9rem; }
 .api-key-clear { background: var(--red); }
 .api-key-close { background: #fffaf0; }
+.api-key-actions .gemini-key-link { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; padding: 0.4rem; background: #fffaf0; text-decoration: none; }
+.gemini-mark { display: block; width: 100%; height: 100%; }
 
 @media (hover: hover) {
   .brutal-button:hover, .suggestion-pill:hover, .copy-button:hover, .coolors-button:hover, .pinterest-button:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #17151b; }

@@ -82,3 +82,9 @@
   - Files: `style.css`, `script.js`, `index.html`, `tests/test_static.py`, `spec/SPEC-taysir-ai.md`, `PRODUCT.md`, `DESIGN.md`, `tasks/verification.md`, `AGENTS.md`
   - Evidence: `.impeccable/review/touch-color-results.json`, `hero-touch-color.png`.
   - Remaining external check: user to confirm the hover/touch color feel in a live browser.
+
+- [x] Task 14: Add a Gemini-styled shortcut in the API-key dialog.
+  - Acceptance: A compact Gemini-logo button opens `https://aistudio.google.com/u/2/api-keys` in a new tab with `noopener noreferrer`; it keeps the sharp-border/hard-shadow style, has an Arabic accessible name, and preserves RTL, mobile layout, dark mode, and all existing key handling.
+  - Verify: 52 static tests and Zen Browser/Marionette checks for exact destination, new-tab attributes, SVG gradient mark, 320px no-overflow, and dark-mode visibility.
+  - Files: `index.html`, `style.css`, `tests/test_static.py`, `spec/SPEC-taysir-ai.md`, `PRODUCT.md`, `DESIGN.md`, `tasks/verification.md`
+  - Evidence: `.impeccable/review/gemini-key-link-results.json`, `gemini-key-link.png`, `gemini-key-link-narrow.png`, `gemini-key-link-dark.png`.
