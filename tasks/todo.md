@@ -90,7 +90,7 @@
   - Evidence: `.impeccable/review/gemini-key-link-results.json`, `gemini-key-link.png`, `gemini-key-link-narrow.png`, `gemini-key-link-dark.png`.
 
 - [x] Task 15: Add a credits button for the contributors and the SQU charitable work.
-  - Acceptance: A «المطورين» button opens an Arabic dialog titled «الشكر والتقدير» naming «حسام بن محمد بن العبري و محمد بن نعيم الفارسي» and stating the project is charitable work for SQU; RTL, mobile header, dark mode, print hiding, and all existing flows stay intact.
+  - Acceptance: A «المطورين» button opens an Arabic dialog titled «الشكر والتقدير» naming «حسام بن محمد بن العبري و محمد بن نعيم الفارسي» stating the project is charitable work for SQU and for مادة المهارات الدراسية والحياتية; RTL, mobile header, dark mode, print hiding, and all existing flows stay intact.
   - Verify: 56 static tests and Zen Browser/Marionette checks for dialog text, focus, close, no 320px overflow, dark panel, and unchanged API-key dialog.
   - Files: `index.html`, `style.css`, `script.js`, `tests/test_static.py`, `spec/SPEC-taysir-ai.md`, `PRODUCT.md`, `DESIGN.md`, `tasks/verification.md`
   - Evidence: `.impeccable/review/credits-results.json`, `credits-dialog.png`, `credits-dialog-narrow.png`, `credits-dialog-dark.png`.

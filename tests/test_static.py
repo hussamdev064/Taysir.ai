@@ -532,11 +532,12 @@ class CreditsDialogTests(unittest.TestCase):
             "عملاً خيرياً",
             "جامعة السلطان قابوس",
             "SQU",
+            "المهارات الدراسية والحياتية",
         ):
             self.assertIn(copy, self.html, copy)
 
     def test_credits_reuses_pinned_visual_system(self):
-        for selector in (".credits-button", ".credits-dialog", ".credits-names", ".credits-note"):
+        for selector in (".credits-button", ".credits-dialog", ".credits-names", ".credits-note", ".credits-course"):
             self.assertIn(selector, self.css, selector)
         self.assertIn(".api-key-dialog, .credits-dialog", self.css)
         self.assertIn("box-shadow: 8px 8px 0 #17151b", self.css)

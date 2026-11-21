@@ -213,7 +213,7 @@ Depth is structural, not atmospheric. Every raised surface has a sharp solid bla
 
 **The Gemini Shortcut Rule.** The API-key dialog's action row leads with a compact 42px square tile: a paper surface inside the same sharp ink frame and hard shadow, holding the four-point Gemini sparkle in its blue→violet→coral gradient. It is a real link to Google AI Studio's key page that opens in a new tab with `noopener noreferrer`, carries an Arabic accessible name, and stays a light tile inside the always-light dialog in both themes. It only helps obtain a key; it never reads, writes, or transmits one.
 
-**The Credits Rule.** The header's «المطورين» button reuses the same paper dialog family and hard shadow, with a star beside its always-visible label. The dialog holds the two names in a pink strip and the charitable-work statement in a mint strip, both with 2px ink frames. At 420px and below the label shrinks with the other header controls and the header row wraps so all three controls stay visible without overflow.
+**The Credits Rule.** The header's «المطورين» button reuses the same paper dialog family and hard shadow, with a star beside its always-visible label. The dialog holds the two names in a pink strip, the charitable-work statement in a mint strip, and the course dedication in a blue strip, all with 2px ink frames and ink text. At 420px and below the label shrinks with the other header controls and the header row wraps so all three controls stay visible without overflow.
 
 ## Shapes
 

@@ -106,7 +106,8 @@ html.dark #project-description::placeholder { color: #d6c6df; }
 .credits-star { font-size: 1rem; line-height: 1; }
 .credits-intro { margin-bottom: 0.6rem; color: #54495b; font-size: 0.95rem; font-weight: 700; line-height: 1.8; }
 .credits-names { margin: 0 0 1rem; padding: 0.75rem 0.9rem; border: 2px solid #17151b; background: var(--pink); color: #17151b; font-size: 1.05rem; font-weight: 900; line-height: 1.9; }
-.credits-note { margin-bottom: 0; padding: 0.75rem 0.9rem; border: 2px solid #17151b; background: var(--mint); color: #17151b; font-weight: 800; line-height: 1.8; }
+.credits-note { padding: 0.75rem 0.9rem; border: 2px solid #17151b; background: var(--mint); color: #17151b; font-weight: 800; line-height: 1.8; }
+.credits-course { margin-bottom: 0; padding: 0.75rem 0.9rem; border: 2px solid #17151b; background: var(--blue); color: #17151b; font-weight: 800; line-height: 1.8; }
 .api-key-actions .gemini-key-link { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; padding: 0.4rem; background: #fffaf0; text-decoration: none; }
 .gemini-mark { display: block; width: 100%; height: 100%; }
 

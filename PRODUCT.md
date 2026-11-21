@@ -30,7 +30,7 @@ The user enters a description or selects one of three Arabic suggestions, option
 
 - Arabic RTL single-page interface with the exact copy and workflows in `the_prompt.txt`.
 - Vanilla JavaScript integration with Google Gemini only, returning the specified strict JSON contract.
-- Three suggestion pills, dark/light toggle, loading state, empty-input and API/parse errors, copy feedback, tactile press feedback, subtle hero wave, mouse-follow motion and touch color, Coolors deep link, Pinterest reference link, a Gemini-marked shortcut to Google AI Studio's key page inside the header dialog, a «المطورين» button crediting the two contributors and the charitable work for the SQU project, and print-friendly output.
+- Three suggestion pills, dark/light toggle, loading state, empty-input and API/parse errors, copy feedback, tactile press feedback, subtle hero wave, mouse-follow motion and touch color, Coolors deep link, Pinterest reference link, a Gemini-marked shortcut to Google AI Studio's key page inside the header dialog, a «المطورين» button crediting the two contributors, the charitable work for the SQU project, and the dedication to مادة المهارات الدراسية والحياتية, and print-friendly output.
 - GPLv3 open-source notices are required.
 - `GEMINI_API_KEY` remains `YOUR_API_KEY_HERE` in source; the user may paste a real key into the header dialog for the current page only, overriding the placeholder at runtime without browser storage.
 - Stable `gemini-3.8-flash` is selected from official documentation. A secure production API proxy is out of V1 scope.
