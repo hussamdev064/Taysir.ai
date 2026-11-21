@@ -40,4 +40,7 @@ python3 -m unittest discover -s tests -v
 
 ## الترخيص
 
-هذا المشروع مفتوح المصدر ومرخّص بموجب ترخيص GPLv3.
+هذا المشروع مفتوح المصدر ومرخّص بموجب ترخيصGPLv3.
+
+## رابط الموقع 
+https://hussamdev064.github.io/Taysir.ai/
