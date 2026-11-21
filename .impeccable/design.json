@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T06:11:14Z",
+  "title": "Design System: Taysir.ai",
+  "extensions": {
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero promise only." },
+      "headline": { "displayName": "Headline", "purpose": "Result-section title." },
+      "title": { "displayName": "Title", "purpose": "Card headings." },
+      "body": { "displayName": "Body", "purpose": "Controls, explanations, and generated descriptions." },
+      "label": { "displayName": "Label", "purpose": "Theme and compact action labels." }
+    },
+    "shadows": [
+      { "name": "control-lift", "value": "6px 6px 0 #17151b", "purpose": "Primary and theme buttons." },
+      { "name": "worksheet-lift", "value": "7px 7px 0 #17151b", "purpose": "Subtitle and project input." },
+      { "name": "card-lift", "value": "8px 8px 0 #17151b", "purpose": "Generated result cards." },
+      { "name": "chip-lift", "value": "4px 4px 0 #17151b", "purpose": "Suggestions and inset fields." },
+      { "name": "pressed-lift", "value": "3px 3px 0 #17151b", "purpose": "Hover feedback paired with physical translation." }
+    ],
+    "motion": [
+      { "name": "press", "value": "140ms ease", "purpose": "Button and chip transform/shadow transitions." },
+      { "name": "results-fade", "value": "450ms ease-out", "purpose": "Fade and 12px upward entrance for generated results." },
+      { "name": "spinner", "value": "800ms linear infinite", "purpose": "Loading indicator rotation; reduced-motion preferences collapse animation duration." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Full-width purple generation action with physical pressed feedback.",
+      "html": "<button class=\"ds-generate\" type=\"button\">توليد الهوية البصرية</button>",
+      "css": ".ds-generate { width: 100%; padding: 0.95rem 1.25rem; border: 3px solid #17151b; border-radius: 0; background: #c6b0f7; box-shadow: 6px 6px 0 #17151b; color: #17151b; font-family: Tajawal, sans-serif; font-size: 1.2rem; font-weight: 800; cursor: pointer; transition: transform 140ms ease, box-shadow 140ms ease; } .ds-generate:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #17151b; } .ds-generate:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 #17151b; } .ds-generate:focus-visible { outline: 3px solid #7651bc; outline-offset: 4px; }"
+    },
+    {
+      "name": "Theme Button",
+      "kind": "button",
+      "refersTo": "button-theme",
+      "description": "Compact mint theme control with a bordered circular indicator.",
+      "html": "<button class=\"ds-theme\" type=\"button\"><span class=\"ds-theme-dot\" aria-hidden=\"true\"></span>الوضع الداكن</button>",
+      "css": ".ds-theme { display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 0.75rem; border: 3px solid #17151b; border-radius: 0; background: #aee0c1; box-shadow: 6px 6px 0 #17151b; color: #17151b; font-family: Tajawal, sans-serif; font-size: 0.9rem; font-weight: 800; cursor: pointer; transition: transform 140ms ease, box-shadow 140ms ease; } .ds-theme-dot { width: 1rem; height: 1rem; border: 2px solid #17151b; border-radius: 50%; background: #17151b; } .ds-theme:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #17151b; } .ds-theme:focus-visible { outline: 3px solid #7651bc; outline-offset: 4px; }"
+    },
+    {
+      "name": "API Key Button",
+      "kind": "button",
+      "refersTo": "button-key",
+      "description": "Compact header control that opens the key dialog and turns mint when a key is ready.",
+      "html": "<button class=\"ds-key\" type=\"button\" aria-haspopup=\"dialog\">مفتاح Gemini</button>",
+      "css": ".ds-key { padding: 0.55rem 0.75rem; border: 3px solid #17151b; border-radius: 0; background: #f6db75; box-shadow: 6px 6px 0 #17151b; color: #17151b; font-family: Tajawal, sans-serif; font-size: 0.9rem; font-weight: 800; cursor: pointer; transition: transform 140ms ease, box-shadow 140ms ease; } .ds-key[data-has-key=\"true\"] { background: #aee0c1; } .ds-key:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #17151b; } .ds-key:focus-visible { outline: 3px solid #7651bc; outline-offset: 4px; }"
+    },
+    {
+      "name": "API Key Dialog",
+      "kind": "dialog",
+      "refersTo": "dialog-key",
+      "description": "Square cream credential sheet with hard offset, masked key field, and memory-only actions.",
+      "html": "<dialog class=\"ds-key-dialog\"><h2>مفتاح Gemini</h2><button type=\"button\">حفظ المفتاح</button><button type=\"button\">مسح المفتاح</button><button type=\"button\">إغلاق</button></dialog>",
+      "css": ".ds-key-dialog { width: min(32rem, calc(100vw - 2rem)); padding: 1.5rem; border: 3px solid #17151b; border-radius: 0; background: #fffaf0; box-shadow: 8px 8px 0 #17151b; color: #17151b; } .ds-key-dialog::backdrop { background: rgba(23, 21, 27, 0.55); } .ds-key-dialog h2 { font-size: 1.35rem; font-weight: 900; } .ds-key-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }"
+    },
+    {
+      "name": "API Key Input",
+      "kind": "input",
+      "refersTo": "input-key",
+      "description": "Masked LTR monospace credential field with cream paper and hard black frame.",
+      "html": "<input class=\"ds-key-input\" type=\"password\" dir=\"ltr\" autocomplete=\"off\" placeholder=\"الصق مفتاح Gemini هنا\">",
+      "css": ".ds-key-input { display: block; width: 100%; padding: 0.85rem; border: 3px solid #17151b; border-radius: 0; outline: none; background: #fffaf0; box-shadow: 5px 5px 0 #17151b; color: #17151b; direction: ltr; font-family: monospace; text-align: left; } .ds-key-input:focus-visible { outline: 3px solid #7651bc; outline-offset: 4px; }"
+    },
+    {
+      "name": "Suggestion Chip",
+      "kind": "chip",
+      "refersTo": "chip-suggestion",
+      "description": "Clickable project-description suggestion with a hard pill silhouette.",
+      "html": "<button class=\"ds-suggestion\" type=\"button\">مخبز منزلي</button>",
+      "css": ".ds-suggestion { padding: 0.45rem 0.85rem; border: 2px solid #17151b; border-radius: 999px; background: #f6db75; box-shadow: 4px 4px 0 #17151b; color: #17151b; font-family: Tajawal, sans-serif; font-weight: 800; cursor: pointer; transition: transform 140ms ease, box-shadow 140ms ease; } .ds-suggestion:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #17151b; } .ds-suggestion:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 #17151b; } .ds-suggestion:focus-visible { outline: 3px solid #7651bc; outline-offset: 4px; }"
+    },
+    {
+      "name": "Project Textarea",
+      "kind": "input",
+      "refersTo": "input-project",
+      "description": "Large RTL writing field with a cream surface and hard black frame.",
+      "html": "<textarea class=\"ds-project\" rows=\"4\" dir=\"rtl\" placeholder=\"اكتب هنا فكرة مشروعك، ما الذي تبيعه؟ ومن هم عملاؤك؟\"></textarea>",
+      "css": ".ds-project { display: block; width: 100%; min-height: 11rem; resize: vertical; padding: 1.1rem; border: 3px solid #17151b; border-radius: 0; outline: none; background: #fffaf0; box-shadow: 7px 7px 0 #17151b; color: #17151b; caret-color: #7651bc; font-family: Tajawal, sans-serif; font-size: 1.1rem; font-weight: 500; line-height: 1.9; } .ds-project::placeholder { color: #62546b; opacity: 1; } .ds-project:focus-visible { outline: 3px solid #7651bc; outline-offset: 4px; }"
+    },
+    {
+      "name": "Slogan Result Card",
+      "kind": "card",
+      "refersTo": "card-slogan",
+      "description": "Yellow generated-output card with heavy Arabic slogan typography.",
+      "html": "<article class=\"ds-card\"><h3>الشعار اللفظي</h3><p>من البيت… نكهة تجمعنا</p><button type=\"button\">نسخ</button></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; min-width: 16rem; padding: 1.5rem; border: 3px solid #17151b; border-radius: 0; background: #f6db75; box-shadow: 8px 8px 0 #17151b; color: #17151b; font-family: Tajawal, sans-serif; } .ds-card h3 { margin: 0 0 1.5rem; font-size: 1.35rem; font-weight: 900; } .ds-card p { flex: 1; margin: 0 0 1.5rem; font-size: 2rem; font-weight: 900; line-height: 1.65; } .ds-card button { align-self: flex-start; padding: 0.4rem 1.1rem; border: 2px solid #17151b; border-radius: 0; background: #fffaf0; box-shadow: 3px 3px 0 #17151b; color: #17151b; font-weight: 800; cursor: pointer; } .ds-card button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #17151b; } .ds-card button:focus-visible { outline: 3px solid #7651bc; outline-offset: 4px; }"
+    },
+    {
+      "name": "Color Swatch",
+      "kind": "custom",
+      "refersTo": "card-palette",
+      "description": "Circular dynamic color sample paired with its Arabic name and LTR HEX code.",
+      "html": "<div class=\"ds-color\"><span class=\"ds-swatch\" aria-hidden=\"true\"></span><strong>بني القرفة</strong><code dir=\"ltr\">#8A4B2F</code></div>",
+      "css": ".ds-color { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.75rem; min-width: 15rem; padding: 1rem; border: 3px solid #17151b; background: #f4b8c8; color: #17151b; font-family: Tajawal, sans-serif; } .ds-swatch { width: 2.75rem; height: 2.75rem; border: 3px solid #17151b; border-radius: 50%; background: #8a4b2f; } .ds-color strong { overflow-wrap: anywhere; font-weight: 800; } .ds-color code { font-family: monospace; font-size: 0.9rem; font-weight: 700; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Arabic Identity Worksheet",
+    "overview": "The interface feels like a generous sheet of colored working paper: direct Arabic typography, visible black construction lines, and controls that behave like physical stamps. It is playful without becoming decorative, and keeps the generation task ahead of visual ornament.",
+    "keyCharacteristics": [
+      "Native Arabic RTL composition with Tajawal typography.",
+      "Cream paper ground and distinct pastel working surfaces.",
+      "Sharp black borders and solid offset shadows with no blur.",
+      "Buttons physically move down and right when pressed.",
+      "Result cards stay light and readable in dark mode."
+    ],
+    "rules": [
+      { "name": "The Light Cards Rule", "body": "Keep all three identity cards on their yellow, pink, and mint surfaces in both themes; only the shell and writing field darken.", "section": "colors" },
+      { "name": "The One Action Rule", "body": "Reserve purple for the main generation button so the page has one obvious primary action.", "section": "colors" },
+      { "name": "The ID Selector Rule", "body": "Hero, result-heading, and card-heading typography uses component-specific selectors so runtime-injected Tailwind preflight cannot reset their size or weight.", "section": "typography" },
+      { "name": "The Hard Depth Rule", "body": "Never add blur to component shadows; use opaque black offsets only.", "section": "elevation" },
+      { "name": "The Physical Press Rule", "body": "Hover-capable controls translate by `3px` on both axes while their shadow contracts; active state moves slightly farther.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do preserve native RTL reading order and test both narrow and wide layouts.",
+      "Do keep generated Arabic text in `textContent` or form-field values.",
+      "Do keep printable result surfaces colored with exact print-color adjustment.",
+      "Do provide reduced-motion behavior and visible keyboard focus."
+    ],
+    "donts": [
+      "Don't use blurred shadows or rounded cards.",
+      "Don't darken the three generated result cards with the shell theme.",
+      "Don't let Tailwind preflight flatten component heading typography.",
+      "Don't introduce additional accents where the established pastel role already exists."
+    ]
+  }
+}

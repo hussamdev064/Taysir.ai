@@ -1,0 +1,136 @@
+<!-- Taysir.ai — Open Source under the GPLv3 License. -->
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تيسير.ai يولد شعاراً وألواناً وفكرة شعار بصري لمشروعك بالذكاء الاصطناعي.">
+  <meta name="theme-color" content="#f8f1df">
+  <title>تيسير.ai — أطلق هوية مشروعك</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: "class" };
+  </script>
+  <link rel="stylesheet" href="style.css?v=12">
+  <script src="script.js?v=12" defer></script>
+</head>
+<body class="min-h-screen font-sans">
+  <header id="site-header" class="no-print">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 sm:py-7">
+      <a href="./" class="brand" aria-label="تيسير.ai — الصفحة الرئيسية">تيسير<span dir="ltr">.ai</span></a>
+      <div class="header-actions">
+        <button id="api-key-button" class="brutal-button api-key-button no-print" type="button" aria-haspopup="dialog" aria-controls="api-key-dialog" aria-label="إضافة مفتاح Gemini">مفتاح Gemini</button>
+        <button id="theme-toggle" class="brutal-button theme-toggle" type="button" aria-pressed="false">
+          <span class="theme-symbol" aria-hidden="true"></span>
+          <span id="theme-label">الوضع الداكن</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 sm:pb-24">
+    <section class="hero no-print mx-auto max-w-4xl pt-8 text-center sm:pt-14" aria-labelledby="hero-title">
+      <h1 id="hero-title">أطلق هوية مشروعك في ثوانٍ</h1>
+      <p class="hero-subtitle mx-auto mt-6 max-w-3xl sm:mt-8">
+        منصة تعمل بالذكاء الاصطناعي لمساعدة الطلاب والأسر المنتجة على بناء هويتهم البصرية مجاناً
+      </p>
+    </section>
+
+    <section aria-label="إنشاء الهوية البصرية" class="generator-shell no-print mx-auto mt-8 max-w-3xl sm:mt-10">
+      <form id="identity-form" novalidate>
+        <div id="suggestions" class="mb-6 flex flex-wrap items-center justify-center gap-3" aria-label="اقتراحات سريعة">
+          <button class="suggestion-pill" type="button" data-description="مخبز منزلي يقدم معجنات وكيكًا طازجًا بطابع عائلي دافئ، للعائلات والأصدقاء في الحي وطلبات المناسبات الصغيرة.">مخبز منزلي</button>
+          <button class="suggestion-pill" type="button" data-description="متجر عطور يقدم تركيبات شرقية وعصرية بعبوات أنيقة، للشباب والمهتمين بالهدايا الشخصية والمناسبات.">متجر عطور</button>
+          <button class="suggestion-pill" type="button" data-description="تطبيق توصيل يربط المتاجر المحلية بالعملاء ويوفر طلبات سريعة وتتبعًا واضحًا، للطلاب والعائلات المشغولة داخل المدينة.">تطبيق توصيل</button>
+        </div>
+        <label for="project-description" class="sr-only">وصف المشروع</label>
+        <textarea id="project-description" name="projectDescription" rows="6" placeholder="اكتب هنا فكرة مشروعك، ما الذي تبيعه؟ ومن هم عملاؤك؟" aria-describedby="form-error"></textarea>
+        <p id="form-error" class="error-message mt-5" role="alert" hidden></p>
+        <p id="form-error-detail" class="error-detail" dir="ltr" hidden></p>
+        <button id="generate-button" class="brutal-button generate-button mt-6 w-full" type="submit">
+          توليد الهوية البصرية
+        </button>
+        <div id="loading-state" class="loading-state mt-6" role="status" aria-live="polite" hidden>
+          <div class="loading-bar" role="progressbar" aria-label="جارٍ التوليد">
+            <div class="loading-bar-fill"></div>
+          </div>
+          <div class="loading-row">
+            <span class="spinner" aria-hidden="true"></span>
+            <span>تيسير يبتكر هويتك الآن...</span>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section id="results-section" class="mt-16 sm:mt-20" aria-labelledby="results-title" hidden>
+      <div class="results-toolbar mb-8 flex flex-col items-center justify-between gap-5 sm:flex-row">
+        <h2 id="results-title">هويتك البصرية جاهزة</h2>
+        <button id="print-button" class="brutal-button print-button no-print" type="button">تحميل الهوية (PDF)</button>
+      </div>
+      <div class="results-grid grid gap-7 md:grid-cols-2">
+        <article class="result-card slogan-card">
+          <h3>الشعار اللفظي</h3>
+          <p id="slogan-output" class="slogan-output" aria-live="polite"></p>
+          <div class="card-actions no-print">
+            <button class="copy-button" type="button" data-copy="slogan">نسخ</button>
+            <span class="copy-feedback" role="status" aria-live="polite" hidden>تم النسخ!</span>
+          </div>
+        </article>
+        <article class="result-card palette-card">
+          <h3>ألوان الهوية</h3>
+          <div id="color-palette" class="color-palette" aria-live="polite"></div>
+          <div class="card-actions no-print">
+            <div class="card-action-group">
+              <button class="copy-button" type="button" data-copy="colors">نسخ</button>
+              <a id="coolors-link" class="coolors-button" href="https://coolors.co/" target="_blank" rel="noopener noreferrer" aria-label="فتح الألوان في Coolors">Coolors</a>
+            </div>
+            <span class="copy-feedback" role="status" aria-live="polite" hidden>تم النسخ!</span>
+          </div>
+        </article>
+        <article class="result-card logo-card">
+          <h3>فكرة الشعار البصري</h3>
+          <label for="logo-concept" class="sr-only">وصف فكرة الشعار البصري</label>
+          <textarea id="logo-concept" class="logo-concept" rows="9" readonly></textarea>
+          <div class="card-actions no-print">
+            <div class="card-action-group">
+              <button class="copy-button" type="button" data-copy="logoConcept">نسخ</button>
+              <a id="pinterest-link" class="pinterest-button" href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="فتح مراجع شعارات في Pinterest">Pinterest</a>
+            </div>
+            <span class="copy-feedback" role="status" aria-live="polite" hidden>تم النسخ!</span>
+          </div>
+        </article>
+        <article class="result-card ideas-card">
+          <h3>أفكار ومقترحات</h3>
+          <ul id="suggestions-output" class="suggestions-output" aria-live="polite"></ul>
+          <div class="card-actions no-print">
+            <button class="copy-button" type="button" data-copy="suggestions">نسخ</button>
+            <span class="copy-feedback" role="status" aria-live="polite" hidden>تم النسخ!</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="api-key-dialog" class="api-key-dialog no-print" aria-labelledby="api-key-title">
+    <form id="api-key-form">
+      <h2 id="api-key-title">مفتاح Gemini</h2>
+      <p id="api-key-help" class="api-key-help">يُستخدم المفتاح لهذه الصفحة فقط، ولا يُحفظ في المتصفح. سيختفي عند تحديث الصفحة أو إغلاقها.</p>
+      <label for="api-key-input" class="api-key-label">مفتاح API</label>
+      <input id="api-key-input" class="api-key-input" type="password" dir="ltr" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="الصق مفتاح Gemini هنا" aria-describedby="api-key-help api-key-status">
+      <p id="api-key-status" class="api-key-status" role="status" aria-live="polite" hidden></p>
+      <div class="api-key-actions">
+        <button id="api-key-save" class="brutal-button api-key-save" type="submit">حفظ المفتاح</button>
+        <button id="api-key-clear" class="brutal-button api-key-clear" type="button">مسح المفتاح</button>
+        <button id="api-key-close" class="brutal-button api-key-close" type="button">إغلاق</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="no-print mx-auto max-w-6xl px-4 pb-7 text-center text-sm sm:px-6">
+    <span>تيسير.ai — مشروع مفتوح المصدر تحت رخصة GPLv3</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+Act as an expert Full-Stack Developer and UI/UX Designer. Your task is to build a complete, single-page web application called "Taysir.ai" (تيسير.ai). It is an open-source tool licensed under the GPLv3 License, powered by AI to generate complete visual brand identities for students' startups and productive families using the Google Gemini API.
+
+Please write the complete HTML, CSS (using Tailwind CSS), and JavaScript for this project. Organize the code cleanly and follow the numbered requirements below:
+
+1. CORE SETUP & TECH STACK
+- Use standard HTML5, Vanilla JavaScript, and Tailwind CSS (via CDN).
+- The website must be natively Arabic. Set the HTML tag to `<html dir="rtl" lang="ar">`.
+- Ensure the font is a bold, modern Arabic font (e.g., Google Fonts 'Tajawal' or 'Cairo' with bold weights).
+- The design must be fully mobile-responsive (mobile-first approach).
+- Add custom CSS for `@media print` to hide the header, input area, and buttons, so users can cleanly save the results cards as a PDF.
+- Include an HTML comment at the top of the file and a small footer at the bottom indicating that the project is Open Source under the GPLv3 license.
+
+2. UI/UX DESIGN & LAYOUT
+- Theme: Neo-Brutalism (Paperish feel with soft colors). Use an off-white/cream paperish background. All interactive elements, containers, and cards should feature soft pastel colors (e.g., soft yellow, pink, mint, or blue) contrasted with thick, sharp black borders and solid, hard black shadows (no blur) to create a striking Neo-Brutalist look.
+- Header: Include the logo text "تيسير.ai" on the right, and a Dark/Light mode toggle switch on the left (styled as a neo-brutalist button).
+- Hero Section: Center-aligned.
+  - Main Title: "أطلق هوية مشروعك في ثوانٍ" (Launch your project's identity in seconds). Make it bold and striking.
+  - Subtitle: "منصة تعمل بالذكاء الاصطناعي لمساعدة الطلاب والأسر المنتجة على بناء هويتهم البصرية مجاناً" (placed inside a stylized neo-brutalist paperish box).
+- Quick Suggestions (New): Below the subtitle, add 3 small clickable tags (pills) like "مخبز منزلي", "متجر عطور", "تطبيق توصيل". Design them with thick borders and solid shadows. Clicking one should auto-fill the textarea with a relevant Arabic description.
+- Input Section: A large `textarea` with a thick black border, solid shadow, and a soft background color. 
+  - Placeholder: "اكتب هنا فكرة مشروعك، ما الذي تبيعه؟ ومن هم عملاؤك؟"
+- Call to Action (CTA) Button: A prominent, wide neo-brutalist button colored in vibrant soft purple or blue. Hover effect: Button translates slightly down and right, and the hard shadow shrinks to simulate a physical press.
+  - Text: "توليد الهوية البصرية".
+- Loading State: A hidden loading div that appears when the CTA is clicked. Include a thick-bordered CSS spinner and the text: "تيسير يبتكر هويتك الآن...".
+
+3. RESULTS SECTION & EXPORT
+Create a hidden results section that becomes visible (with a smooth fade-in animation using Tailwind classes like `animate-fade-in`) after the API responds.
+- Add a top action bar in this section with a "تحميل الهوية (PDF)" button that triggers `window.print()`.
+- Display 3 beautifully styled Neo-Brutalist cards arranged in a Flexbox or CSS Grid. Each card should have a different soft pastel background, thick black borders, and hard shadows:
+  - Card 1 (Slogan): Title "الشعار اللفظي". A space for the generated slogan. Include a "Copy" (نسخ) button.
+  - Card 2 (Color Palette): Title "ألوان الهوية". A space to show 3 to 4 recommended HEX color codes, along with small circular `div`s that dynamically display the actual colors (with thick borders). Include a "Copy" button.
+  - Card 3 (Logo Concept): Title "فكرة الشعار البصري". A text area displaying a detailed description of the logo idea. Include a "Copy" button.
+
+4. JAVASCRIPT & GEMINI API LOGIC
+- API Key: Provide a constant `const GEMINI_API_KEY = 'YOUR_API_KEY_HERE';` at the top.
+- Fetch Request: Write an async function that sends the textarea input to the Google Gemini API.
+- System Prompt for Gemini: Instruct Gemini to act as a branding expert and return a STRICT JSON object with this exact structure (NO Markdown formatting outside the JSON):
+  {
+    "slogan": "The generated Arabic slogan",
+    "colors": [{"hex": "#FFFFFF", "name": "Color Name in Arabic"}],
+    "logoConcept": "Detailed description of the logo in Arabic"
+  }
+- Data Parsing: Parse the JSON response and dynamically inject the values into the 3 UI Cards. Handle potential JSON parsing errors safely.
+- Copy Functionality: Implement clipboard copy logic for the buttons and show a brief "تم النسخ!" tooltip.
+
+5. ERROR HANDLING
+- If the textarea is empty, show a gentle alert styled as a neo-brutalist error box (red background, thick black border): "الرجاء كتابة وصف للمشروع أولاً".
+- If the API fails, hide the loading state and show a thick-bordered red error text below the button: "حدث خطأ أثناء التوليد، يرجى المحاولة مرة أخرى".
+
+Please output the complete, working code within `index.html`, `style.css` (for neo-brutalist shadow utilities, animations, and print rules), and `script.js` blocks.

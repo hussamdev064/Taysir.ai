@@ -1,0 +1,6 @@
+.opencode/
+.impeccable/mocks/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.log
