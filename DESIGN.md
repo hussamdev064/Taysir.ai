@@ -183,7 +183,7 @@ The palette separates the shell from the work product: the shell changes between
 
 ## Layout
 
-The page is mobile-first and RTL. Wide content is capped at `72rem`; the hero is capped at `64rem` and the generator at `48rem`. Mobile page gutters are `1rem`, increasing to `1.5rem` at the small breakpoint. Suggestions wrap rather than compress. Results move from one column to a balanced two-by-two grid at `768px` and stay two columns on wide screens. Print output uses one column with protected card breaks.
+The page is mobile-first and RTL. Wide content is capped at `72rem`; the hero is capped at `64rem` and the generator at `48rem`. Mobile page gutters are `1rem`, increasing to `1.5rem` at the small breakpoint. At 420px and below, the brand and the three header controls each get one row, the hero subtitle and generator are tightened, and result cards use a `1.1rem` padding while staying one column. Suggestions wrap rather than compress. Results move to a balanced two-by-two grid at `768px` and stay two columns on wide screens. Print output uses one column with protected card breaks. Mobile overrides are declared after their base rules so later component styles cannot silently undo them.
 
 ## Elevation & Depth
 
@@ -213,7 +213,7 @@ Depth is structural, not atmospheric. Every raised surface has a sharp solid bla
 
 **The Gemini Shortcut Rule.** The API-key dialog's action row leads with a compact 42px square tile: a paper surface inside the same sharp ink frame and hard shadow, holding the four-point Gemini sparkle in its blue→violet→coral gradient. It is a real link to Google AI Studio's key page that opens in a new tab with `noopener noreferrer`, carries an Arabic accessible name, and stays a light tile inside the always-light dialog in both themes. It only helps obtain a key; it never reads, writes, or transmits one.
 
-**The Credits Rule.** The header's «المطورين» button reuses the same paper dialog family and hard shadow, with a star beside its always-visible label. The dialog holds the two names in a pink strip, the charitable-work statement in a mint strip, and the course dedication in a blue strip, all with 2px ink frames and ink text. At 420px and below the label shrinks with the other header controls and the header row wraps so all three controls stay visible without overflow.
+**The Credits Rule.** The header's «المطورين» button reuses the same paper dialog family and hard shadow, with a crisp four-point SVG star beside its always-visible label. The dialog holds the two names in a pink strip, the charitable-work statement in a mint strip, and the course dedication in a blue strip, all with 2px ink frames and ink text. At 420px and below, the label stays visible while the neighbouring controls compact, so all three share one aligned row without overflow.
 
 ## Shapes
 
@@ -224,8 +224,8 @@ Work surfaces, fields, cards, and primary controls have square corners with `3px
 ### Buttons
 - **Shape:** sharp corners and opaque hard shadows.
 - **Primary:** soft purple, wide, heavy Tajawal label, with pressed translation, shadow contraction, a 500ms fluid shake, and a five-chip pastel splash on click.
-- **Theme:** compact mint control; its circular indicator and accessible pressed state reflect the current theme.
-- **API key:** compact yellow header control that switches to mint when a key is ready; its accessible label states whether a key is needed or ready.
+- **Theme:** compact mint control; its circular indicator and accessible pressed state reflect the current theme. On phones the label is visually clipped but its Arabic name stays in the accessibility tree and is synchronised with the theme state.
+- **API key:** compact yellow header control that switches to mint when a key is ready; its accessible label states whether a key is needed or ready. On phones only the `Gemini` word is visible while the full Arabic name remains for assistive tech.
 - **Copy:** small cream labels inside cards; feedback appears adjacent as `تم النسخ!`.
 - **Coolors:** compact blue link inside the palette card that opens the generated palette at `coolors.co/<hex>-<hex>-<hex>` in a new tab with `noopener noreferrer`.
 - **Pinterest:** compact pink link inside the logo-concept card that opens a short, encoded Pinterest pin search such as `bakery logo minimal` in a new tab with `noopener noreferrer`. A local category map keeps the query general instead of pasting the full description.

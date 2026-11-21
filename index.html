@@ -14,8 +14,8 @@
   <script>
     tailwind.config = { darkMode: "class" };
   </script>
-  <link rel="stylesheet" href="style.css?v=16">
-  <script src="script.js?v=16" defer></script>
+  <link rel="stylesheet" href="style.css?v=18">
+  <script src="script.js?v=18" defer></script>
 </head>
 <body class="min-h-screen font-sans">
   <header id="site-header" class="no-print">
@@ -23,13 +23,13 @@
       <a href="./" class="brand" aria-label="تيسير.ai — الصفحة الرئيسية">تيسير<span dir="ltr">.ai</span></a>
       <div class="header-actions">
         <button id="credits-button" class="brutal-button credits-button no-print" type="button" aria-haspopup="dialog" aria-controls="credits-dialog" aria-label="المطورين">
-          <span class="credits-star" aria-hidden="true">★</span>
+          <svg class="credits-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.5l2.9 6.2 6.8.9-4.9 4.7 1.2 6.7L12 17.8l-6 3.2 1.2-6.7-4.9-4.7 6.8-.9L12 2.5z"></path></svg>
           <span class="credits-label">المطورين</span>
         </button>
-        <button id="api-key-button" class="brutal-button api-key-button no-print" type="button" aria-haspopup="dialog" aria-controls="api-key-dialog" aria-label="إضافة مفتاح Gemini">مفتاح Gemini</button>
-        <button id="theme-toggle" class="brutal-button theme-toggle" type="button" aria-pressed="false">
+        <button id="api-key-button" class="brutal-button api-key-button no-print" type="button" aria-haspopup="dialog" aria-controls="api-key-dialog" aria-label="إضافة مفتاح Gemini"><span class="api-key-prefix">مفتاح </span>Gemini</button>
+        <button id="theme-toggle" class="brutal-button theme-toggle" type="button" aria-pressed="false" aria-label="تبديل الوضع الداكن">
           <span class="theme-symbol" aria-hidden="true"></span>
-          <span id="theme-label">الوضع الداكن</span>
+          <span id="theme-label" class="theme-label">الوضع الداكن</span>
         </button>
       </div>
     </div>

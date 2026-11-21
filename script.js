@@ -311,6 +311,7 @@ function setTheme(isDark) {
   document.documentElement.classList.toggle("dark", isDark);
   themeToggle.setAttribute("aria-pressed", String(isDark));
   themeLabel.textContent = isDark ? "الوضع الفاتح" : "الوضع الداكن";
+  themeToggle.setAttribute("aria-label", themeLabel.textContent);
   themeColor.setAttribute("content", isDark ? "#24212c" : "#f8f1df");
 }
 

@@ -94,3 +94,9 @@
   - Verify: 56 static tests and Zen Browser/Marionette checks for dialog text, focus, close, no 320px overflow, dark panel, and unchanged API-key dialog.
   - Files: `index.html`, `style.css`, `script.js`, `tests/test_static.py`, `spec/SPEC-taysir-ai.md`, `PRODUCT.md`, `DESIGN.md`, `tasks/verification.md`
   - Evidence: `.impeccable/review/credits-results.json`, `credits-dialog.png`, `credits-dialog-narrow.png`, `credits-dialog-dark.png`.
+
+- [x] Task 16: Improve the phone layout.
+  - Acceptance: At 420px and below, the brand and three header controls use two aligned rows with «المطورين» still visible; the Gemini prefix and theme label compact without losing their Arabic accessible names; the hero, generator, and result cards are tightened; RTL, dark mode, print, and all dialogs and generation flows stay intact.
+  - Verify: 61 static tests and Zen Browser/Marionette checks at a 306px effective viewport for no overflow, tap-target heights, visible credits label, theme aria-label sync, exact empty-input error, both dialogs, and rendered results in light and dark modes.
+  - Files: `index.html`, `style.css`, `script.js`, `tests/test_static.py`, `DESIGN.md`, `tasks/verification.md`
+  - Evidence: `.impeccable/review/mobile-polish-results.json`, `mobile-credits.png`, `mobile-results.png`, `mobile-results-dark.png`.

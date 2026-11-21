@@ -541,7 +541,9 @@ class CreditsDialogTests(unittest.TestCase):
             self.assertIn(selector, self.css, selector)
         self.assertIn(".api-key-dialog, .credits-dialog", self.css)
         self.assertIn("box-shadow: 8px 8px 0 #17151b", self.css)
-        self.assertNotIn("clip-path: inset(50%)", self.css)
+        clipped = re.search(r"\.api-key-prefix, \.theme-label \{[^}]*clip-path: inset\(50%\)", self.css)
+        self.assertIsNotNone(clipped)
+        self.assertNotIn(".credits-label", clipped.group(0))
 
     def test_credits_dialog_open_and_close(self):
         self.assertIn('const creditsButton = byId("credits-button");', self.js)
@@ -550,6 +552,45 @@ class CreditsDialogTests(unittest.TestCase):
         self.assertIn("creditsDialog.showModal()", self.js)
         self.assertIn('byId("credits-close").addEventListener("click"', self.js)
         self.assertIn("creditsDialog.close()", self.js)
+
+
+class MobileLayoutTests(unittest.TestCase):
+    def setUp(self):
+        self.html = source("index.html")
+        self.css = source("style.css")
+        self.js = source("script.js")
+
+    def test_mobile_header_keeps_all_three_controls_visible(self):
+        for rule in (
+            "#site-header > div { flex-wrap: wrap; row-gap: 0.6rem; }",
+            ".header-actions { flex-wrap: nowrap; justify-content: space-between; gap: 0.35rem; width: 100%; }",
+        ):
+            self.assertIn(rule, self.css)
+        self.assertIn('class="credits-label">المطورين</span>', self.html)
+
+    def test_mobile_rules_are_declared_after_base_rules(self):
+        mobile = self.css.index("@media (max-width: 420px)")
+        for anchor in (".credits-button {", ".hero-subtitle {", ".result-card {", ".card-actions {"):
+            self.assertLess(self.css.index(anchor), mobile, f"{anchor} must be overridden by the mobile block")
+
+    def test_compact_controls_keep_arabic_accessible_names(self):
+        self.assertIn('class="api-key-prefix">مفتاح </span>Gemini', self.html)
+        self.assertIn('class="theme-label">الوضع الداكن</span>', self.html)
+        self.assertIn('aria-label="تبديل الوضع الداكن"', self.html)
+        self.assertIn('themeToggle.setAttribute("aria-label", themeLabel.textContent);', self.js)
+
+    def test_credits_star_is_a_sized_icon(self):
+        self.assertIn('class="credits-star" viewBox="0 0 24 24"', self.html)
+        self.assertIn(".credits-star { display: block; flex: none; width: 1rem; height: 1rem; }", self.css)
+
+    def test_mobile_spacing_tightens_the_fold(self):
+        for rule in (
+            ".hero { padding-top: 1.25rem; }",
+            ".hero-subtitle { margin-top: 1.25rem; padding: 0.85rem 1rem; line-height: 1.7; }",
+            ".generator-shell { margin-top: 1.5rem; }",
+            ".result-card { padding: 1.1rem; }",
+        ):
+            self.assertIn(rule, self.css)
 
 
 if __name__ == "__main__":
