@@ -514,7 +514,7 @@ class CreditsDialogTests(unittest.TestCase):
             'id="credits-button"',
             'aria-haspopup="dialog"',
             'aria-controls="credits-dialog"',
-            'aria-label="الشكر والتقدير"',
+            'aria-label="المطورين"',
             '<dialog id="credits-dialog"',
             'id="credits-title"',
             'id="credits-close"',
@@ -525,6 +525,7 @@ class CreditsDialogTests(unittest.TestCase):
 
     def test_credits_copy_names_and_charitable_work(self):
         for copy in (
+            "المطورين",
             "الشكر والتقدير",
             "حسام بن محمد بن العبري",
             "محمد بن نعيم الفارسي",
@@ -539,7 +540,7 @@ class CreditsDialogTests(unittest.TestCase):
             self.assertIn(selector, self.css, selector)
         self.assertIn(".api-key-dialog, .credits-dialog", self.css)
         self.assertIn("box-shadow: 8px 8px 0 #17151b", self.css)
-        self.assertIn("clip-path: inset(50%)", self.css)
+        self.assertNotIn("clip-path: inset(50%)", self.css)
 
     def test_credits_dialog_open_and_close(self):
         self.assertIn('const creditsButton = byId("credits-button");', self.js)
