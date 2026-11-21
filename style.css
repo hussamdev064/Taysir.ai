@@ -62,7 +62,8 @@ html.dark .theme-symbol { background: var(--yellow); }
 @media (max-width: 420px) {
   .brand { font-size: 1.35rem; }
   .header-actions { gap: 0.4rem; }
-  .api-key-button, .theme-toggle { padding: 0.45rem 0.5rem; font-size: 0.75rem; }
+  .api-key-button, .theme-toggle, .credits-button { padding: 0.45rem 0.5rem; font-size: 0.75rem; }
+  .credits-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .theme-symbol { width: 0.8rem; height: 0.8rem; }
 }
 
@@ -86,9 +87,9 @@ html.dark #project-description::placeholder { color: #d6c6df; }
 .loading-bar-fill { width: 45%; height: 100%; background: var(--purple); border-inline-end: 3px solid #17151b; animation: loading-sweep 1.1s ease-in-out infinite; }
 .spinner { width: 1.5rem; height: 1.5rem; border: 4px solid #17151b; border-left-color: transparent; border-radius: 50%; animation: spin 800ms linear infinite; }
 
-.api-key-dialog { width: min(32rem, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); padding: 1.5rem; overflow: auto; border: 3px solid #17151b; border-radius: 0; background: #fffaf0; box-shadow: 8px 8px 0 #17151b; color: #17151b; }
-.api-key-dialog::backdrop { background: rgba(23, 21, 27, 0.55); }
-.api-key-dialog h2 { margin-bottom: 0.6rem; font-size: 1.35rem; font-weight: 900; }
+.api-key-dialog, .credits-dialog { width: min(32rem, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); padding: 1.5rem; overflow: auto; border: 3px solid #17151b; border-radius: 0; background: #fffaf0; box-shadow: 8px 8px 0 #17151b; color: #17151b; }
+.api-key-dialog::backdrop, .credits-dialog::backdrop { background: rgba(23, 21, 27, 0.55); }
+.api-key-dialog h2, .credits-dialog h2 { margin-bottom: 0.6rem; font-size: 1.35rem; font-weight: 900; }
 .api-key-help { margin-bottom: 1.1rem; color: #54495b; font-size: 0.9rem; font-weight: 700; line-height: 1.8; }
 .api-key-label { display: block; font-size: 0.9rem; font-weight: 800; }
 .api-key-input { display: block; width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 3px solid #17151b; border-radius: 0; outline: none; background: #fffaf0; box-shadow: 5px 5px 0 #17151b; color: #17151b; caret-color: #7651bc; direction: ltr; font-family: monospace; font-size: 0.95rem; text-align: left; }
@@ -100,6 +101,11 @@ html.dark #project-description::placeholder { color: #d6c6df; }
 .api-key-actions .brutal-button { padding: 0.65rem 0.9rem; font-size: 0.9rem; }
 .api-key-clear { background: var(--red); }
 .api-key-close { background: #fffaf0; }
+.credits-button { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.55rem 0.75rem; background: var(--yellow); font-size: 0.9rem; }
+.credits-star { font-size: 1rem; line-height: 1; }
+.credits-intro { margin-bottom: 0.6rem; color: #54495b; font-size: 0.95rem; font-weight: 700; line-height: 1.8; }
+.credits-names { margin: 0 0 1rem; padding: 0.75rem 0.9rem; border: 2px solid #17151b; background: var(--pink); color: #17151b; font-size: 1.05rem; font-weight: 900; line-height: 1.9; }
+.credits-note { margin-bottom: 0; padding: 0.75rem 0.9rem; border: 2px solid #17151b; background: var(--mint); color: #17151b; font-weight: 800; line-height: 1.8; }
 .api-key-actions .gemini-key-link { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; padding: 0.4rem; background: #fffaf0; text-decoration: none; }
 .gemini-mark { display: block; width: 100%; height: 100%; }
 

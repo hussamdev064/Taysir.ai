@@ -503,5 +503,52 @@ class CopyAndExportTests(unittest.TestCase):
         self.assertIn("resizeLogoConcept", self.js)
 
 
+class CreditsDialogTests(unittest.TestCase):
+    def setUp(self):
+        self.html = source("index.html")
+        self.css = source("style.css")
+        self.js = source("script.js")
+
+    def test_credits_button_and_dialog_markup(self):
+        for fragment in (
+            'id="credits-button"',
+            'aria-haspopup="dialog"',
+            'aria-controls="credits-dialog"',
+            'aria-label="الشكر والتقدير"',
+            '<dialog id="credits-dialog"',
+            'id="credits-title"',
+            'id="credits-close"',
+        ):
+            self.assertIn(fragment, self.html, fragment)
+        self.assertRegex(self.html, r'<dialog[^>]*class="[^"]*\bno-print\b')
+        self.assertRegex(self.html, r'<button[^>]*id="credits-button"[^>]*class="[^"]*\bbrutal-button\b')
+
+    def test_credits_copy_names_and_charitable_work(self):
+        for copy in (
+            "الشكر والتقدير",
+            "حسام بن محمد بن العبري",
+            "محمد بن نعيم الفارسي",
+            "عملاً خيرياً",
+            "جامعة السلطان قابوس",
+            "SQU",
+        ):
+            self.assertIn(copy, self.html, copy)
+
+    def test_credits_reuses_pinned_visual_system(self):
+        for selector in (".credits-button", ".credits-dialog", ".credits-names", ".credits-note"):
+            self.assertIn(selector, self.css, selector)
+        self.assertIn(".api-key-dialog, .credits-dialog", self.css)
+        self.assertIn("box-shadow: 8px 8px 0 #17151b", self.css)
+        self.assertIn("clip-path: inset(50%)", self.css)
+
+    def test_credits_dialog_open_and_close(self):
+        self.assertIn('const creditsButton = byId("credits-button");', self.js)
+        self.assertIn('const creditsDialog = byId("credits-dialog");', self.js)
+        self.assertIn('creditsButton.addEventListener("click"', self.js)
+        self.assertIn("creditsDialog.showModal()", self.js)
+        self.assertIn('byId("credits-close").addEventListener("click"', self.js)
+        self.assertIn("creditsDialog.close()", self.js)
+
+
 if __name__ == "__main__":
     unittest.main()

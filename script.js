@@ -53,6 +53,8 @@ const formErrorDetail = byId("form-error-detail");
 const generateButton = byId("generate-button");
 const coolorsLink = byId("coolors-link");
 const pinterestLink = byId("pinterest-link");
+const creditsButton = byId("credits-button");
+const creditsDialog = byId("credits-dialog");
 const apiKeyButton = byId("api-key-button");
 const apiKeyDialog = byId("api-key-dialog");
 const apiKeyForm = byId("api-key-form");
@@ -89,6 +91,15 @@ function syncApiKeyButton() {
   apiKeyButton.dataset.hasKey = String(hasKey);
   apiKeyButton.setAttribute("aria-label", hasKey ? "مفتاح Gemini جاهز" : "إضافة مفتاح Gemini");
 }
+
+creditsButton.addEventListener("click", () => {
+  creditsDialog.showModal();
+  byId("credits-close").focus();
+});
+
+byId("credits-close").addEventListener("click", () => {
+  creditsDialog.close();
+});
 
 apiKeyButton.addEventListener("click", () => {
   apiKeyInput.value = "";

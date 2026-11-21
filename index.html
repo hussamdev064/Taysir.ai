@@ -14,14 +14,18 @@
   <script>
     tailwind.config = { darkMode: "class" };
   </script>
-  <link rel="stylesheet" href="style.css?v=13">
-  <script src="script.js?v=13" defer></script>
+  <link rel="stylesheet" href="style.css?v=14">
+  <script src="script.js?v=14" defer></script>
 </head>
 <body class="min-h-screen font-sans">
   <header id="site-header" class="no-print">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 sm:py-7">
       <a href="./" class="brand" aria-label="تيسير.ai — الصفحة الرئيسية">تيسير<span dir="ltr">.ai</span></a>
       <div class="header-actions">
+        <button id="credits-button" class="brutal-button credits-button no-print" type="button" aria-haspopup="dialog" aria-controls="credits-dialog" aria-label="الشكر والتقدير">
+          <span class="credits-star" aria-hidden="true">★</span>
+          <span class="credits-label">الشكر والتقدير</span>
+        </button>
         <button id="api-key-button" class="brutal-button api-key-button no-print" type="button" aria-haspopup="dialog" aria-controls="api-key-dialog" aria-label="إضافة مفتاح Gemini">مفتاح Gemini</button>
         <button id="theme-toggle" class="brutal-button theme-toggle" type="button" aria-pressed="false">
           <span class="theme-symbol" aria-hidden="true"></span>
@@ -139,6 +143,16 @@
         <button id="api-key-close" class="brutal-button api-key-close" type="button">إغلاق</button>
       </div>
     </form>
+  </dialog>
+
+  <dialog id="credits-dialog" class="credits-dialog no-print" aria-labelledby="credits-title">
+    <h2 id="credits-title">الشكر والتقدير</h2>
+    <p class="credits-intro">تم إنجاز هذا المشروع بفضل الله ثم بجهد:</p>
+    <p class="credits-names">حسام بن محمد بن العبري و محمد بن نعيم الفارسي</p>
+    <p class="credits-note">صُنع هذا المشروع عملاً خيرياً لمشروع جامعة السلطان قابوس (SQU).</p>
+    <div class="api-key-actions">
+      <button id="credits-close" class="brutal-button api-key-close" type="button">إغلاق</button>
+    </div>
   </dialog>
 
   <footer class="no-print mx-auto max-w-6xl px-4 pb-7 text-center text-sm sm:px-6">
